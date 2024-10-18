@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    /* height: 100vh; */
+    /* text-align: center; */
+    align-items: center;
+}
+
+.container{
+    height: 100vh;
+    color: antiquewhite;
+}
+.content{
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    /* height: 100vh; */
+}
+.centerclass{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+
+.styleHour{
+    font-size: 50px;
+}
+.styleMinute{
+    font-size: 50px;
+}
+.styleSeconds{
+    font-size: 50px;
+}
+.Text{
+    font-size: 50px;
+}
+.titleh{
+    font-size: 80px;
+    color: antiquewhite;
+    display: block;
+    text-align: center;
+    /* justify-content: center; */
+    align-items: center;
+    padding: 70px 0;
+    
+
+}
+    </style>
+</head>
+<body>
+</div>
+<div class="container">
+    <div class="titleh"><h1>Time</h1></div>
+    <div class="content">
+        <div id="hours" class="styleHour centerclass">HH</div>
+        <div id="minutes" class="styleMinute centerclass">Minute</div>
+        <div id="Seconds" class="styleSeconds centerclass">Seconds</div>
+        <div id="ampm" class="Text centerclass">AM</div>
+    </div>
+    </div>
+    <script>
+        
+setInterval(() => {
+
+
+var hour = new Date().getHours();
+var minute = new Date().getMinutes();
+var second = new Date().getSeconds();
+var texttype = "AM";
+
+texttype = hour>12 ? texttype = "PM" : texttype;
+// var time = [hour, minute, seconds];
+
+hour = hour>12 ? hour - 12 : hour;
+
+var textHours = document.getElementById("hours");
+var textMinutes = document.getElementById("minutes");
+var textSeconds = document.getElementById("Seconds");
+var textampm = document.getElementById("ampm");
+
+hour = hour<10 ? "0" + hour : hour;
+minute = minute<10 ? "0" + minute : minute;
+second = second<10 ? "0" + second : second;
+
+textHours.innerHTML = hour;
+textMinutes.innerHTML = minute;
+textSeconds.innerHTML = second;
+textampm.innerHTML = texttype;
+
+
+
+},1000);
+    </script>
+</body>
+</html>
